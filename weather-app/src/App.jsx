@@ -1,9 +1,11 @@
 import React from 'react'
+import Weather from './components/weather'
+import './index.css'
 
 const App = () => {
   return (
-    <div>
-      ostad
+    <div className='app'>
+      <Weather />
     </div>
   )
 }
