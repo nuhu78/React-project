@@ -42,3 +42,33 @@
 .search-icon:hover {
   opacity: 1;
 }
+
+.weather-icon {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.temperature,
+.condition,
+.location,
+.feels-like {
+  text-align: center;
+}
+
+.additional-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.col {
+  text-align: center;
+}
+
+.small-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 10px;
+}
