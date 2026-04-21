@@ -6,6 +6,20 @@ import humidityicon from '../assets/humidity.png'
 import windicon from '../assets/wind.png'
 
 function Weather() {
+try{
+  const getweatherdata = async(city)=>{
+    const url ='http://api.weatherapi.com/v1/current.json?key=${import.meta.env.VITE_APP_ID}&q=${city}'
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log(data)
+  }
+}catch(error){
+  console.error('Error fetching weather data:', error)
+}
+useEffect(()=>{
+  getweatherdata('Dhaka')
+},[])
+
   return (
     <div className='weather'>
       {/*searchbar*/}
