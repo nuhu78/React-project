@@ -15,4 +15,47 @@
   height: 100vh;
   background: linear-gradient(135deg, #0093E9 0%, #4facfe 50%, #87CEEB 100%);
   background-attachment: fixed;
+  transition: background 0.8s ease-in-out;
+}
+
+/* Sunny - Bright yellow/orange */
+.app.sunny {
+  background: linear-gradient(135deg, #0093E9 0%, #4facfe 50%, #87CEEB 100%);
+  background-attachment: fixed;
+}
+
+/* Rainy - Dark blue/gray */
+.app.rainy {
+  background: linear-gradient(135deg, #2C3E50 0%, #34495E 50%, #1A252F 100%);
+  background-attachment: fixed;
+}
+
+/* Cloudy - Light gray/white */
+.app.cloudy {
+  background: linear-gradient(135deg, #95A5A6 0%, #BDC3C7 50%, #ECF0F1 100%);
+  background-attachment: fixed;
+}
+
+/* Snowy - Icy white/blue */
+.app.snowy {
+  background: linear-gradient(135deg, #E8F8F5 0%, #D6EAF8 50%, #AED6F1 100%);
+  background-attachment: fixed;
+}
+
+/* Stormy - Dark purple/black */
+.app.stormy {
+  background: linear-gradient(135deg, #2C3E50 0%, #34495E 30%, #1A1A2E 100%);
+  background-attachment: fixed;
+}
+
+/* Foggy - Misty gray */
+.app.foggy {
+  background: linear-gradient(135deg, #7F8C8D 0%, #95A5A6 50%, #BDC3C7 100%);
+  background-attachment: fixed;
+}
+
+/* Windy - Swirling blue/purple */
+.app.windy {
+  background: linear-gradient(135deg, #5B7C99 0%, #8E7CC3 50%, #6C5B95 100%);
+  background-attachment: fixed;
 }
