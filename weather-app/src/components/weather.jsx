@@ -1,46 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './weather.css'
 import searchicon from '../assets/search.png'
-import sunnyicon from '../assets/sunny.png'
-import cloudyicon from '../assets/cloudy.png'
-import rainyicon from '../assets/rainy.png'
-import snowyicon from '../assets/snowy.png'
-import stormyicon from '../assets/stormy.png'
-import foggyicon from '../assets/foggy.png'
 import humidityicon from '../assets/humidity.png'
 import windicon from '../assets/wind.png'
 
 function Weather({ weatherData, setWeatherData }) {
   const InputRef = useRef(null)
-
-  const getWeatherIcon = (condition) => {
-    if (!condition) return sunnyicon
-
-    const normalizedCondition = condition.toLowerCase()
-
-    if (normalizedCondition.includes('sunny') || normalizedCondition.includes('clear')) {
-      return sunnyicon
-    }
-    if (normalizedCondition.includes('rain') || normalizedCondition.includes('drizzle')) {
-      return rainyicon
-    }
-    if (normalizedCondition.includes('cloud')) {
-      return cloudyicon
-    }
-    if (normalizedCondition.includes('snow') || normalizedCondition.includes('sleet') || normalizedCondition.includes('ice')) {
-      return snowyicon
-    }
-    if (normalizedCondition.includes('thunder') || normalizedCondition.includes('storm')) {
-      return stormyicon
-    }
-    if (normalizedCondition.includes('fog') || normalizedCondition.includes('mist') || normalizedCondition.includes('haze')) {
-      return foggyicon
-    }
-
-    return sunnyicon
-  }
-
-  const weatherIcon = getWeatherIcon(weatherData?.condition)
+  const [weatherIcon, setWeatherIcon] = useState('https://cdn.weatherapi.com/weather/128x128/day/113.png')
 
   const getweatherdata = async(city)=>{
     try {
@@ -51,6 +17,10 @@ function Weather({ weatherData, setWeatherData }) {
       if (!response.ok || !data.current || !data.location) {
         throw new Error(data?.error?.message || 'Unable to fetch weather data')
       }
+
+      // Extract icon URL from API response
+      const iconUrl = data.current.condition.icon
+      setWeatherIcon(`https:${iconUrl}`)
 
       setWeatherData({
         humidity: data.current.humidity,
